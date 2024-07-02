@@ -1,0 +1,136 @@
+{
+    "status": "ok",
+    "totalResults": 10,
+    "articles": [
+    {
+    "source": {
+    "id": "bbc-news",
+    "name": "BBC News"
+    },
+    "author": "BBC News",
+    "title": "Supreme Court rules Idaho women can have abortions during health emergencies",
+    "description": "The only exception to Idaho's near-total abortion ban is for the life - but not the health - of the mother.",
+    "url": "https://www.bbc.co.uk/news/articles/cgll0rgk28jo",
+    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/7979/live/8de08670-3498-11ef-812a-f969b7a80bd3.jpg",
+    "publishedAt": "2024-06-27T16:37:18.141219Z",
+    "content": "The short, unsigned opinion returns the case to a lower court.\r\nIt closely resembled a document that briefly appeared on the court's website the day before, before it was swiftly removed, an apparent… [+940 chars]"
+    },
+    {
+    "source": {
+    "id": "bbc-news",
+    "name": "BBC News"
+    },
+    "author": "BBC News",
+    "title": "Gaza: Long campaign by Israel may follow war",
+    "description": "The most intense fighting could be ending, but Gaza could see Israeli action for a long time to come.",
+    "url": "https://www.bbc.co.uk/news/articles/c80xlvkx92go",
+    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/8f2e/live/089a8310-3495-11ef-bbe0-29f79e992ddd.jpg",
+    "publishedAt": "2024-06-27T16:37:17.0789852Z",
+    "content": "Whatever happens on Israel's northern border, the conflict in Gaza, even if at a far lower level of intensity, shows no sign of coming to an end. Moves towards a ceasefire have lost momentum again, w… [+1752 chars]"
+    },
+    {
+    "source": {
+    "id": "bbc-news",
+    "name": "BBC News"
+    },
+    "author": "BBC News",
+    "title": "Supreme Court blocks $6bn Purdue Pharma bankruptcy deal",
+    "description": "The deal would have shielded members of the Sackler family from lawsuits over their role in fuelling the opioid crisis.",
+    "url": "https://www.bbc.co.uk/news/articles/crggl32dz2lo",
+    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/41e2/live/b8302950-24fb-11ef-80aa-699d54c46324.jpg",
+    "publishedAt": "2024-06-27T15:37:15.9536027Z",
+    "content": "The US Supreme Court hasblocked a bankruptcy deal for Purdue Pharma that would have shielded members of the Sackler family from future lawsuits over their role in fuelling the opioid crisis.\r\nThe Sac… [+2999 chars]"
+    },
+    {
+    "source": {
+    "id": "bbc-news",
+    "name": "BBC News"
+    },
+    "author": "BBC News",
+    "title": "Pensions and retirement: 'I don't know how I'm going to work until I'm 67'",
+    "description": "Pensions and retirement are just two of the topics people are focusing on, ahead of the election.",
+    "url": "https://www.bbc.co.uk/news/articles/c3ggdy06r1lo",
+    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/45fd/live/ed0d6b10-2e47-11ef-82a7-932cebefd5de.jpg",
+    "publishedAt": "2024-06-27T14:07:15.110571Z",
+    "content": "The government pays the state pension every four weeks to people who have reached the qualifying age and have paid enough in National Insurance contributions. \r\nAccording to the Department for Work a… [+1220 chars]"
+    },
+    {
+    "source": {
+    "id": "bbc-news",
+    "name": "BBC News"
+    },
+    "author": "BBC News",
+    "title": "French elections: Le Pen threatens challenge to Macron's army powers",
+    "description": "The far-right ex-leader warns the French president will not be able to send troops to Ukraine.",
+    "url": "https://www.bbc.co.uk/news/articles/ce7812ej0k1o",
+    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/9f88/live/9652aa80-3476-11ef-af33-1d1d26626681.jpg",
+    "publishedAt": "2024-06-27T13:07:13.2657917Z",
+    "content": "As president, Mr Macron is commander in chief and traditionally plays a key role in his country's international and defence policy.\r\nHe has been among Europe's strongest leaders in support of Ukraine… [+1221 chars]"
+    },
+    {
+    "source": {
+    "id": "bbc-news",
+    "name": "BBC News"
+    },
+    "author": "BBC News",
+    "title": "Fugitive ‘Cryptoqueen’ reward up to $5m",
+    "description": "Ruja Ignatova is wanted by the FBI for orchestrating a cryptocurrency scam.",
+    "url": "https://www.bbc.co.uk/news/articles/c9785924je3o",
+    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/303c/live/ed6aa090-3479-11ef-a53b-67ee534ca28a.png",
+    "publishedAt": "2024-06-27T12:37:19.4069221Z",
+    "content": "A reward for information leading to the arrest of Ruja Ignatova, known as the Missing Cryptoqueen, has been increased by US authorities to $5m (£4m).\r\nThe Bulgarian-born German woman, 44, is wanted b… [+1397 chars]"
+    },
+    {
+    "source": {
+    "id": "bbc-news",
+    "name": "BBC News"
+    },
+    "author": "BBC News",
+    "title": "Elon Musk's SpaceX contracted to destroy retired space station",
+    "description": "The California-based company will build a \"tugboat\" to execute the end-of-life disposal of the ISS.",
+    "url": "https://www.bbc.co.uk/news/articles/cnl02jl5pzno",
+    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/6fa5/live/8826d070-345e-11ef-a044-9d4367d5b599.jpg",
+    "publishedAt": "2024-06-27T12:07:16.5940576Z",
+    "content": "Nasa has studied various options for end-of-life disposal, external.\r\nThese include disassembling the station and using the younger elements in a next-generation platform. Another idea has been to si… [+1364 chars]"
+    },
+    {
+    "source": {
+    "id": "bbc-news",
+    "name": "BBC News"
+    },
+    "author": "BBC News",
+    "title": "What time is the first US presidential debate tonight?",
+    "description": "The Democratic president and his Republican rival meet  on a debate stage for the first time in four years.",
+    "url": "https://www.bbc.co.uk/news/articles/cekke335z9ko",
+    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/ad61/live/98b6d810-345c-11ef-a044-9d4367d5b599.png",
+    "publishedAt": "2024-06-27T10:22:19.6574505Z",
+    "content": "By contrast, Trump has been participating in a series of \"informal policy discussions\", according to his campaign.\r\nIn these sessions, he has huddled with lawmakers - including at least two vice-pres… [+993 chars]"
+    },
+    {
+    "source": {
+    "id": "bbc-news",
+    "name": "BBC News"
+    },
+    "author": "BBC News",
+    "title": "What's at stake in the first presidential debate?",
+    "description": "Thursday's debate between the two will be a reunion of sorts - although not exactly a friendly one.",
+    "url": "https://www.bbc.co.uk/news/articles/cn0099v8ywpo",
+    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/eca4/live/762f7670-33f9-11ef-bdc5-41d7421c2adf.png",
+    "publishedAt": "2024-06-27T10:22:17.6891917Z",
+    "content": "Coming into this debate, polling indicated that voters gave Trump better marks on the economy and immigration - two of the top issues for American voters.\r\nMeanwhile, the president was favoured on ab… [+1308 chars]"
+    },
+    {
+    "source": {
+    "id": "bbc-news",
+    "name": "BBC News"
+    },
+    "author": "BBC News",
+    "title": "Biden v Trump: What are they thinking in Moscow, Beijing and Delhi?",
+    "description": "Eight BBC correspondents give their view on the US election from global capitals.",
+    "url": "https://www.bbc.co.uk/news/articles/cp008qzzee1o",
+    "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/4549/live/2c163c00-33d5-11ef-bdc5-41d7421c2adf.jpg",
+    "publishedAt": "2024-06-26T23:07:13.1412567Z",
+    "content": "By Laura Bicker, China correspondent, Beijing\r\nBoth candidates are vying to be tough on Beijing and have similar economic policies to combat Chinas rise including raising tariffs on cheap Chinese goo… [+1241 chars]"
+    }
+    ]
+    }
