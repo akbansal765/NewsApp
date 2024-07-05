@@ -1,81 +1,34 @@
-import React, { Component } from 'react'
+import React from 'react'
 import NewsItem from './NewsItem'
 import Spinner from './Spinner';
 import PropTypes from 'prop-types'
 import InfiniteScroll from 'react-infinite-scroll-component';
+import { useState, useEffect } from 'react';
 
-export class News extends Component {
+const News = (props) => {
 
-  static defaultProps = {
-    country: 'in',
-    pageSize: 8,
-    category: 'general'
-  }
-
-  static propTypes = {
-    country: PropTypes.string.isRequired,
-    pageSize: PropTypes.number.isRequired,
-    category: PropTypes.string,
-  }
-/*
-  articles = [
-    {
-      "source": {
-      "id": "bbc-news",
-      "name": "BBC News"
-      },
-      "author": "BBC News",
-      "title": "Supreme Court rules Idaho women can have abortions during health emergencies",
-      "description": "The only exception to Idaho's near-total abortion ban is for the life - but not the health - of the mother.",
-      "url": "https://www.bbc.co.uk/news/articles/cgll0rgk28jo",
-      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/7979/live/8de08670-3498-11ef-812a-f969b7a80bd3.jpg",
-      "publishedAt": "2024-06-27T16:37:18.141219Z",
-      "content": "The short, unsigned opinion returns the case to a lower court.\r\nIt closely resembled a document that briefly appeared on the court's website the day before, before it was swiftly removed, an apparent… [+940 chars]"
-      },
-      {
-      "source": {
-      "id": "bbc-news",
-      "name": "BBC News"
-      },
-      "author": "BBC News",
-      "title": "Gaza: Long campaign by Israel may follow war",
-      "description": "The most intense fighting could be ending, but Gaza could see Israeli action for a long time to come.",
-      "url": "https://www.bbc.co.uk/news/articles/c80xlvkx92go",
-      "urlToImage": "https://ichef.bbci.co.uk/news/1024/branded_news/8f2e/live/089a8310-3495-11ef-bbe0-29f79e992ddd.jpg",
-      "publishedAt": "2024-06-27T16:37:17.0789852Z",
-      "content": "Whatever happens on Israel's northern border, the conflict in Gaza, even if at a far lower level of intensity, shows no sign of coming to an end. Moves towards a ceasefire have lost momentum again, w… [+1752 chars]"
-      }
-  ] 
-  */
-  capitalizeFunction = (string) => {
+  const capitalizeFunction = (string) => {
      return string.slice(0, 1).toUpperCase() + string.slice(1);
   }
 
-  constructor(props){
-    super(props);
-    console.log('constructor');
+  const [articles, setArticles] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [page, setPage] = useState(1);
+  const [totalResults, setTotalResults] = useState(0);
 
-    this.state = {
-      // articles: this.articles,
-      articles: [],
-      loading: false,
-      page: 1,
-      totalResults: 0
-    }
-    // changing the title and capitalizing the category name
-    document.title = `${this.capitalizeFunction(this.props.category)} - NewsMonkey`;
-  }
+    
+  
 
-    async updateNews(pageNum){
-      const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page + pageNum}&pageSize=${this.props.pageSize}`;
-      this.props.setProgress(10);
-      this.setState({loading: true});
+    const updateNews = async (pageNum) => {
+      const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page + pageNum}&pageSize=${props.pageSize}`;
+      props.setProgress(10);
+      setLoading(true);
       const data = await fetch(url);
-      this.props.setProgress(30);
+      props.setProgress(30);
 
       const parsedData = await data.json();
       console.log(parsedData);
-      this.props.setProgress(70);
+      props.setProgress(70);
 
 
       parsedData.articles.forEach((el, i) => {
@@ -84,76 +37,76 @@ export class News extends Component {
   
       console.log(parsedData.articles);
 
-      this.setState({
-        articles: parsedData.articles, 
-        totalResults: parsedData.totalResults,
-        loading: false});
+      setArticles(parsedData.articles);
+      setTotalResults(parsedData.totalResults);
+      setLoading(false);
 
-      this.props.setProgress(100);
+      props.setProgress(100);
 
-    }
+    };
   
-
     // after adding &page=2 we can fetch the other remaining objects, we can read newsAPI docs for more info
-    async componentDidMount(){
-    this.updateNews(0);
-    
-    }
+    useEffect(() => {
+           // changing the title and capitalizing the category name
+           document.title = `${capitalizeFunction(props.category)} - NewsMonkey`;
+           
+           updateNews();
+           // eslink-disable-next-line
+      },
+     []);
 
-  // handleBackPage = async ()=>{
-  //   this.setState({page: this.state.page - 1});
-  //   this.updateNews(-1);
-  // }
 
-  // handleNextPage = async ()=>{
-  //     this.setState({page: this.state.page + 1});
-  //     this.updateNews(1);
-  // }
+  const fetchMoreData  = async () => {
 
-  fetchMoreData  = async () => {
-    this.setState({page: this.state.page + 1})
-
-      const url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.state.page}&pageSize=${this.props.pageSize}`;
-      this.setState({loading: true});
+    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page + 1}&pageSize=${props.pageSize}`;
+      setPage(page + 1);  // here we have updated the page to page+ 1 in above url and setPage state set to page + 1 after the url. because when were doing the set page before the url our page was not updaing the page immediately, it was taking some time in which same page was rendered again which was causing the unique key error in console
+      setLoading(true);
       const data = await fetch(url);
       const parsedData = await data.json();
       console.log(parsedData);
-  
-      this.setState({
-        articles: this.state.articles.concat(parsedData.articles), 
-        totalResults: parsedData.totalResults,
-        loading: false});
+
+      setArticles(articles.concat(parsedData.articles));
+      setTotalResults(parsedData.totalResults);
+      setLoading(false);
+
   }
 
  
-  render() {
     return (
               <>
-                <h3 className='text-center'>News Monkey - Top {this.capitalizeFunction(this.props.category)} Headlines</h3>
-
-                {this.state.loading && <Spinner />}
+                <h3 className='text-center' style={{marginTop: '80px'}}>News Monkey - Top {capitalizeFunction(props.category)} Headlines</h3>
+                {loading && <Spinner />}
                 <InfiniteScroll
-                  dataLength={this.state.articles.length}
-                  next={this.fetchMoreData}
-                  hasMore={this.state.articles.length !== this.state.totalResults}
-                  loader={this.state.loading && <Spinner />}>
+                  dataLength={articles.length}
+                  next={fetchMoreData}
+                  hasMore={articles.length !== totalResults}
+                  loader={loading && <Spinner />}>
                     <div className="container">
                         <div className="row">
-                        {this.state.articles.map((el)=> {
-                          return <div className="col-md-4" key={el.uniqueID}>
+                        {articles.map((el)=> {
+                          return <div className="col-md-4" key={el.url}>
                             <NewsItem title = {el.title ? el.title.slice(0, 40): ''} description = {el.description ? el.description.slice(0, 80): ''} imageUrl = {el.urlToImage ? el.urlToImage : 'no-image-icon-11.png'} newsUrl = {el.url} author = {el.author} date = {el.publishedAt} source = {el.source.name}/>
                           </div>
                         })}
                         </div>
                         </div>
               </InfiniteScroll>
-              {/* {!this.state.loading && <div className="container d-flex justify-content-between">
-              <button type="button" disabled = {this.state.page <= 1} onClick={this.handleBackPage} className="btn btn-warning">&larr; Back</button>
-              <button type="button" disabled = {(this.state.page + 1 > Math.ceil(this.state.totalResults / this.props.pageSize))} onClick={this.handleNextPage} className="btn btn-warning">Next &rarr;</button>
-              </div>} */}
             </>
       );
-  }
+  
 }
 
 export default News
+
+
+// News.defaultProps = {
+//   country: 'in',
+//   pageSize: 8,
+//   category: 'general'
+// }
+
+News.propTypes = {
+  country: PropTypes.string.isRequired,
+  pageSize: PropTypes.number.isRequired,
+  category: PropTypes.string,
+}
